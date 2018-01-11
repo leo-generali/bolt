@@ -5,6 +5,8 @@ import Header from './header';
 import Home from '../routes/home';
 import About from '../routes/about';
 
+import { toSeconds } from '../helpers/math';
+
 export default class App extends Component {
 	handleRoute = e => {
 		this.currentUrl = e.url;
