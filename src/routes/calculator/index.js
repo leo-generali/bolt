@@ -1,19 +1,37 @@
 import { h, Component } from 'preact';
 import style from './style.scss';
+
+// Components
 import Input from "../../components/input";
+import CalcBtn from "../../components/calculate_button";
+
+// Helpers
+
+import { calculatePaceString } from "../../helpers/math";
 
 
 export default class Calculator extends Component {
 	constructor() {
 		super();
 		this.handleChange = this.handleChange.bind(this);
+		this.calculatePace = this.calculatePace.bind(this);
 	}
 
 	state = {
 		distance: 0,
-		seconds: 0,
+		hours: 0,
 		minutes: 0,
-		hours: 0
+		seconds: 0,
+		totalSeconds: 0,
+		pace: ''
+	}
+
+	calculateTotalSeconds() {
+		const hoursToSeconds = this.state.hours * 3600;
+		const minutesToSeconds = this.state.minutes * 60;
+		const totalSeconds = hoursToSeconds + minutesToSeconds + this.state.seconds;
+
+		return totalSeconds;
 	}
 
 	handleChange(e) {
@@ -24,7 +42,19 @@ export default class Calculator extends Component {
 			[name]: parseFloat(value, 10)
 		})
 	};
-	
+
+	calculatePace() {
+		const totalSeconds = this.calculateTotalSeconds();
+		const distancePerSecond = totalSeconds / this.state.distance;
+		const distancePerMinutes = this.state.minutes / this.state.distance;
+		const pace = calculatePaceString(distancePerMinutes, distancePerSecond);
+
+		this.setState({
+			totalSeconds,
+			pace
+		})
+	}
+
 	render() {
 		return (
 			<div>
@@ -37,9 +67,9 @@ export default class Calculator extends Component {
 				/>
 				<Input
 					type="number"
-					name="seconds"
-					step="0.1"
-					value={this.state.seconds}
+					name="hours"
+					step="1"
+					value={this.state.hours}
 					handleChange={this.handleChange}
 				/>
 				<Input
@@ -51,11 +81,16 @@ export default class Calculator extends Component {
 				/>
 				<Input
 					type="number"
-					name="hours"
-					step="1"
-					value={this.state.hours}
+					name="seconds"
+					step="0.1"
+					value={this.state.seconds}
 					handleChange={this.handleChange}
 				/>
+				<CalcBtn
+					label="leo is cool"
+					calculatePace={this.calculatePace}
+				/>
+				{this.state.pace}
 			</div>
 		);
 	}
