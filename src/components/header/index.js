@@ -8,7 +8,7 @@ export default class Header extends Component {
 			<header class={style.header}>
 				<h1 class={style.headerText}>Bolt 🏃‍</h1>
 				<nav class={style.navContainer}>
-					<Link class={style.navLink} activeClassName={style.navActive} href="/">Home</Link>
+					<Link class={style.navLink} activeClassName={style.navActive} href="/">Calculator</Link>
 					<Link class={style.navLink} activeClassName={style.navActive} href="/about">About</Link>
 				</nav>
 			</header>
