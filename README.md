@@ -1,4 +1,6 @@
-# {{ name }}
+# Bolt 👟
+
+A much better README incoming later. Expect this app to serve as the *best* pace calculator online. 
 
 ## CLI Commands
 
