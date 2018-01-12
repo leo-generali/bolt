@@ -10,7 +10,10 @@ export default class Calculator extends Component {
 	}
 
 	state = {
-		distance: 0
+		distance: 0,
+		seconds: 0,
+		minutes: 0,
+		hours: 0
 	}
 
 	handleChange(e) {
@@ -25,8 +28,32 @@ export default class Calculator extends Component {
 	render() {
 		return (
 			<div>
-				<Input 
-					distance={this.state.distance}
+				<Input
+					type="number"
+					name="distance"
+					step="0.01"
+					value={this.state.distance}
+					handleChange={this.handleChange}
+				/>
+				<Input
+					type="number"
+					name="seconds"
+					step="0.1"
+					value={this.state.seconds}
+					handleChange={this.handleChange}
+				/>
+				<Input
+					type="number"
+					name="minutes"
+					step="1"
+					value={this.state.minutes}
+					handleChange={this.handleChange}
+				/>
+				<Input
+					type="number"
+					name="hours"
+					step="1"
+					value={this.state.hours}
 					handleChange={this.handleChange}
 				/>
 			</div>
