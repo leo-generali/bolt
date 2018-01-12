@@ -6,7 +6,6 @@ import Input from "../../components/input";
 import CalcBtn from "../../components/calculate_button";
 
 // Helpers
-
 import { calculatePaceString } from "../../helpers/math";
 
 

@@ -1,7 +1,3 @@
-export function minutes() {
-  console.log('yo 👍');
-}
-
 export function calculatePaceString(minutes, seconds) {
   const minutesTrunc = Math.trunc(seconds / 60);
   let secondsRemainder = Math.round((seconds % 60) * 100) / 100;
