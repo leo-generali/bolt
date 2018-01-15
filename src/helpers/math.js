@@ -9,7 +9,6 @@ export function paceStringToSeconds(string) {
   const stringArr = string.split(':');
   const minutes = parseInt(stringArr[0], 10);
   const seconds = parseInt(stringArr[1], 10);
-  console.log(minutes, seconds);
   const totalSecondsPace = (minutes * 60) + (seconds);
   return totalSecondsPace;
 }

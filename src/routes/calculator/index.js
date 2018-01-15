@@ -14,9 +14,10 @@ export default class Calculator extends Component {
 	constructor() {
 		super();
 		this.handleChange = this.handleChange.bind(this);
-		this.calculatePace = this.calculatePace.bind(this);
 		this.changeDistanceType = this.changeDistanceType.bind(this);
 		this.calculateDistance = this.calculateDistance.bind(this);
+		this.calculateTime = this.calculateTime.bind(this);
+		this.calculatePace = this.calculatePace.bind(this);
 	}
 
 	state = {
@@ -76,6 +77,19 @@ export default class Calculator extends Component {
 		});
 	}
 
+	calculateTime() {
+		const secondsPerDistance = paceStringToSeconds(this.state.pace);
+		const totalSeconds = secondsPerDistance * this.state.distance;
+		const hours = Math.trunc(totalSeconds / 3600);
+		const minutes = Math.trunc((totalSeconds / 60) - hours * 60);
+		const seconds = Math.trunc(totalSeconds % 60);
+		this.setState({
+			hours,
+			minutes,
+			seconds
+		});
+	}
+
 	render() {
 		return (
 			<div>
@@ -119,6 +133,10 @@ export default class Calculator extends Component {
 							step="0.1"
 							value={this.state.seconds}
 							handleChange={this.handleChange}
+						/>
+						<CalcBtn
+							label="Calculate Time"
+							calculateFunction={this.calculateTime}
 						/>
 					</form>
 				</div>
