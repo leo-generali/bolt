@@ -6,7 +6,7 @@ export default class CalcButton extends Component {
     return(
       <button
         type="button"
-        onClick={this.props.calculatePace}
+        onClick={this.props.calculateFunction}
       >
       {this.props.label}
       </button>
