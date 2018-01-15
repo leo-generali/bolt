@@ -57,39 +57,50 @@ export default class Calculator extends Component {
 	render() {
 		return (
 			<div>
-				<Input
-					type="number"
-					name="distance"
-					step="0.01"
-					value={this.state.distance}
-					handleChange={this.handleChange}
-				/>
-				<Input
-					type="number"
-					name="hours"
-					step="1"
-					value={this.state.hours}
-					handleChange={this.handleChange}
-				/>
-				<Input
-					type="number"
-					name="minutes"
-					step="1"
-					value={this.state.minutes}
-					handleChange={this.handleChange}
-				/>
-				<Input
-					type="number"
-					name="seconds"
-					step="0.1"
-					value={this.state.seconds}
-					handleChange={this.handleChange}
-				/>
-				<CalcBtn
-					label="leo is cool"
-					calculatePace={this.calculatePace}
-				/>
-				{this.state.pace}
+				<div className={style.inputContainer}>
+					<Input
+						type="number"
+						name="distance"
+						step="0.01"
+						value={this.state.distance}
+						handleChange={this.handleChange}
+					/>
+				</div>
+				<div className={style.inputContainer}>
+					<Input
+						type="number"
+						name="hours"
+						step="1"
+						value={this.state.hours}
+						handleChange={this.handleChange}
+					/>
+					<Input
+						type="number"
+						name="minutes"
+						step="1"
+						value={this.state.minutes}
+						handleChange={this.handleChange}
+					/>
+					<Input
+						type="number"
+						name="seconds"
+						step="0.1"
+						value={this.state.seconds}
+						handleChange={this.handleChange}
+					/>
+				</div>
+				<div>
+					<Input
+						type="string"
+						name="pace"
+						value={this.state.pace}
+						handleChange={this.handleChange}
+					/>
+					<CalcBtn
+						label="leo is cool"
+						calculatePace={this.calculatePace}
+					/>
+				</div>
 			</div>
 		);
 	}
