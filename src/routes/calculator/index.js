@@ -6,6 +6,7 @@ import Input from "../../components/input";
 import CalcBtn from "../../components/calculate_button";
 import DistanceCheckbox from "../../components/distance_type";
 import DistanceList from "../../components/distances";
+import DistanceListCheckbox from "../../components/distance_list_switch";
 
 // Helpers
 import { calculatePaceString, paceStringToSeconds, calculateTotalSeconds } from "../../helpers/math";
@@ -20,6 +21,7 @@ export default class Calculator extends Component {
 		this.calculateTime = this.calculateTime.bind(this);
 		this.calculatePace = this.calculatePace.bind(this);
 		this.updateState = this.updateState.bind(this);
+		this.showDistanceList = this.showDistanceList.bind(this);
 	}
 
 	state = {
@@ -30,7 +32,7 @@ export default class Calculator extends Component {
 		seconds: 0,
 		totalSeconds: 0,
 		pace: '00:00',
-		showingDistanceList: true
+		showingDistanceList: false
 	}
 
 	handleChange(e) {
@@ -47,6 +49,14 @@ export default class Calculator extends Component {
 
 		this.setState({
 			isMiles
+		});
+	}
+
+	showDistanceList() {
+		const showingDistanceList = !this.state.showingDistanceList;
+
+		this.setState({
+			showingDistanceList
 		});
 	}
 
@@ -109,6 +119,10 @@ export default class Calculator extends Component {
 						changeDistanceType={this.changeDistanceType}
 					/>
 					{this.state.isMiles ? 'miles' : 'kilometers'}
+					<DistanceListCheckbox
+						showingDistanceList={this.state.showingDistanceList}
+						showDistanceList={this.showDistanceList}
+					/>
 					<CalcBtn
 						label="Calculate Distance"
 						calculateFunction={this.calculateDistance}
