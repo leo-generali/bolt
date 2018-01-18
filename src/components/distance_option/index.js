@@ -8,12 +8,14 @@ class DistanceOption extends Component {
     const title = this.props.title;
 
     return(
-      <a
-        className={style.distanceOption}
-        onClick={(evt) => this.props.updateState(evt, name, value)}
-      >
-        {title}
-      </a>
+      <div className={style.container}>
+        <a
+          className={style.distanceOption}
+          onClick={(evt) => this.props.updateState(evt, name, value)}
+        >
+          {title}
+        </a>
+      </div>
     );
   }
 }

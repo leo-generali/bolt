@@ -1,15 +1,21 @@
 @import '../../style/color_variables';
 
+.container {
+  display: block;
+  text-align: center;
+  padding: 1rem 0rem;
+}
+
 .distanceOption {
+  font-size: 2rem;
   color: $color-one;
   font-weight: bold;
   text-transform: uppercase;
   padding: 0.25rem;
   margin: 0 0.5rem;
 
-
   &:hover {
     cursor: pointer;
-    border-bottom: 1px solid $color-one;
+    border-bottom: 3px solid $color-one;
   }
 }

@@ -1,4 +1,18 @@
 .distanceList {
+  background-color: white;
   padding: 1rem;
+  max-width: 80vw;
+  position: fixed;
+  margin: 0 auto; /* Will not center vertically and won't work in IE6/7. */
+  left: 0;
+  right: 0;
+  flex-wrap: wrap;
+}
 
+.showing {
+  display: flex;
+}
+
+.not-showing {
+  display: none;
 }

@@ -74,8 +74,7 @@ class DistanceList extends Component {
 
     return (
       <div
-        className={`${style.distanceList} has-shadow`}
-        style={{ display: this.props.showingDistanceList ? 'block' : 'none'}}
+        className={`${style.distanceList} ${ this.props.showingDistanceList ? style.showing : style['not-showing'] } has-shadow`}
       >
         { distances }
       </div>
