@@ -1,11 +1,12 @@
+@import '../../style/color_variables';
+
 .header {
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 56px;
 	padding: 0;
-	background-image: #673AB7;
-	background-image: linear-gradient(45deg,#2A475E, #1D2838);
+	background-color: $color-one;
 	z-index: 50;
 }
 

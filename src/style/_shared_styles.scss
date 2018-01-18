@@ -1,0 +1,19 @@
+$shadow-color: #091922;
+
+.has-shadow {
+  box-shadow: 5px 5px $shadow-color;
+  border: 2px solid $shadow-color;
+}
+
+.button {
+  box-shadow: 5px 5px $shadow-color;
+  border: 2px solid $shadow-color;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+
+  &:hover {
+    box-shadow: 0 0 $shadow-color;
+  }
+}
