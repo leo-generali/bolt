@@ -13,7 +13,13 @@ $shadow-color: #091922;
   transition: 0.3s;
   text-transform: uppercase;
 
+  &--depressed {
+    box-shadow: 0 0 $shadow-color;
+    transform: translateY(2px);
+  }
+
   &:hover {
     box-shadow: 0 0 $shadow-color;
+    transform: translateY(2px);
   }
 }

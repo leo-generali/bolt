@@ -7,6 +7,10 @@
   left: 0;
   right: 0;
   flex-wrap: wrap;
+
+  animation-name: fadeInDown;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
 }
 
 .showing {
@@ -15,4 +19,23 @@
 
 .not-showing {
   display: none;
+}
+
+@media only screen and (min-width: 600px)  {
+  .distanceList {
+    position: absolute;
+    max-width: 300px;
+    width: 400%;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    // transform: translate3d(0, -30px, 0);
+  }
+  100% {
+    opacity: 1;
+    // transform: none;
+  }
 }

@@ -119,49 +119,49 @@ export default class Calculator extends Component {
 						changeDistanceType={this.changeDistanceType}
 					/>
 					{this.state.isMiles ? 'miles' : 'kilometers'}
-					<DistanceListCheckbox
-						showingDistanceList={this.state.showingDistanceList}
-						showDistanceList={this.showDistanceList}
-					/>
+					<div className={style.distanceListContainer}>
+						<DistanceListCheckbox
+							showingDistanceList={this.state.showingDistanceList}
+							showDistanceList={this.showDistanceList}
+						/>
+						<DistanceList
+							updateState={this.updateState}
+							showingDistanceList={this.state.showingDistanceList}
+						/>
+					</div>
 					<CalcBtn
 						label="Calculate Distance"
 						calculateFunction={this.calculateDistance}
 					/>
-					<DistanceList
-						updateState={this.updateState}
-						showingDistanceList={this.state.showingDistanceList}
+				</div>
+				<div className={style.inputContainer}>
+					<Input
+						type="number"
+						name="hours"
+						step="1"
+						value={this.state.hours}
+						handleChange={this.handleChange}
+					/>
+					<Input
+						type="number"
+						name="minutes"
+						step="1"
+						value={this.state.minutes}
+						handleChange={this.handleChange}
+					/>
+					<Input
+						type="number"
+						name="seconds"
+						step="0.1"
+						value={this.state.seconds}
+						handleChange={this.handleChange}
+					/>
+					<CalcBtn
+						label="Calculate Time"
+						calculateFunction={this.calculateTime}
 					/>
 				</div>
 				<div className={style.inputContainer}>
-					<form>
-						<Input
-							type="number"
-							name="hours"
-							step="1"
-							value={this.state.hours}
-							handleChange={this.handleChange}
-						/>
-						<Input
-							type="number"
-							name="minutes"
-							step="1"
-							value={this.state.minutes}
-							handleChange={this.handleChange}
-						/>
-						<Input
-							type="number"
-							name="seconds"
-							step="0.1"
-							value={this.state.seconds}
-							handleChange={this.handleChange}
-						/>
-						<CalcBtn
-							label="Calculate Time"
-							calculateFunction={this.calculateTime}
-						/>
-					</form>
-				</div>
-				<div>
 					<Input
 						type="string"
 						name="pace"

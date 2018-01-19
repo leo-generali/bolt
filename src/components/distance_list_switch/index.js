@@ -4,12 +4,16 @@ import style from './style.scss';
 class DistanceListCheckbox extends Component {
   render() {
     return (
-      <input
-        type="checkbox"
+      <button
+        className={`button ${this.props.showingDistanceList ? ' button--depressed' : ''} ${style.button}`}
         value={this.props.showingDistanceList}
         onClick={this.props.showDistanceList}
       >
-      </input>
+      Distances
+        <div className={style.arrow}>
+          {this.props.showingDistanceList ? ' ▼' : ' ►'}
+        </div>
+      </button>
     );
   }
 }
