@@ -5,11 +5,10 @@ class DistanceListCheckbox extends Component {
   render() {
     return (
       <button
-        className={`button ${this.props.showingDistanceList ? ' button--depressed' : ''} ${style.button}`}
-        value={this.props.showingDistanceList}
+        className={`button ${style.button} ${this.props.showingDistanceList ? ' button--depressed' : ''}`}
         onClick={this.props.showDistanceList}
       >
-      Distances
+        <span className={style.text}>Distances</span>
         <div className={style.arrow}>
           {this.props.showingDistanceList ? ' ▼' : ' ►'}
         </div>

@@ -105,20 +105,18 @@ export default class Calculator extends Component {
 
 	render() {
 		return (
-			<div>
-				<div className={style.inputContainer}>
-					<Input
-						type="number"
-						name="distance"
-						step="0.01"
-						value={this.state.distance}
-						handleChange={this.handleChange}
-					/>
-					<DistanceCheckbox
-						isMiles={this.state.isMiles}
-						changeDistanceType={this.changeDistanceType}
-					/>
-					{this.state.isMiles ? 'miles' : 'kilometers'}
+			<main>
+				<div className={style.row}>
+					<div className={style.inputContainer}>
+						<div className={style.inputLabel}>D</div>
+						<Input
+							type="number"
+							name="distance"
+							step="0.01"
+							value={this.state.distance}
+							handleChange={this.handleChange}
+						/>
+					</div>
 					<div className={style.distanceListContainer}>
 						<DistanceListCheckbox
 							showingDistanceList={this.state.showingDistanceList}
@@ -132,48 +130,54 @@ export default class Calculator extends Component {
 					<CalcBtn
 						label="Calculate Distance"
 						calculateFunction={this.calculateDistance}
-					/>
+					/>	
 				</div>
-				<div className={style.inputContainer}>
-					<Input
-						type="number"
-						name="hours"
-						step="1"
-						value={this.state.hours}
-						handleChange={this.handleChange}
-					/>
-					<Input
-						type="number"
-						name="minutes"
-						step="1"
-						value={this.state.minutes}
-						handleChange={this.handleChange}
-					/>
-					<Input
-						type="number"
-						name="seconds"
-						step="0.1"
-						value={this.state.seconds}
-						handleChange={this.handleChange}
-					/>
+				<div className={style.row}>
+					<div className={style.inputContainer}>
+						<div className={style.inputLabel}>S</div>
+						<Input
+							type="number"
+							name="hours"
+							step="1"
+							value={this.state.hours}
+							handleChange={this.handleChange}
+						/>
+						<Input
+							type="number"
+							name="minutes"
+							step="1"
+							value={this.state.minutes}
+							handleChange={this.handleChange}
+						/>
+						<Input
+							type="number"
+							name="seconds"
+							step="0.1"
+							value={this.state.seconds}
+							handleChange={this.handleChange}
+						/>
+					</div>
 					<CalcBtn
 						label="Calculate Time"
 						calculateFunction={this.calculateTime}
 					/>
 				</div>
-				<div className={style.inputContainer}>
-					<Input
-						type="string"
-						name="pace"
-						value={this.state.pace}
-						handleChange={this.handleChange}
-					/>
+				<div className={style.row}>
+					<div className={style.inputContainer}>
+						<div className={style.inputLabel}>P</div>
+						<Input
+							type="string"
+							name="pace"
+							value={this.state.pace}
+							handleChange={this.handleChange}
+						/>
+					</div>
 					<CalcBtn
 						label="Calculate Pace"
 						calculateFunction={this.calculatePace}
 					/>
 				</div>
-			</div>
+			</main>
 		);
 	}
 }

@@ -1,11 +1,26 @@
+@import '../../style/color_variables';
+
 .home {
 	padding: 56px 20px;
 	min-height: 100%;
 	width: 100%;
 }
 
+.row {
+	display: flex;
+	padding: 3.5rem 2rem;
+}
+
 .inputContainer {
-	min-height: 60px;
+	display: inline-flex;
+	font-size: 1.6rem;
+}
+
+.inputLabel {
+	display: inline;
+	background-color: $color-two;
+	color: white;
+	padding: 1rem;
 }
 
 .distanceListContainer {

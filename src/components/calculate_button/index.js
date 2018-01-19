@@ -5,7 +5,7 @@ export default class CalcButton extends Component {
   render() {
     return(
       <button
-        className='button'
+        className='button button--calc'
         type='button'
         onClick={this.props.calculateFunction}
       >

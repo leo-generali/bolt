@@ -5,7 +5,7 @@ export default class Input extends Component {
 	render() {
 		return (
 			<input
-				className={style.numInput}
+				className={`${style.numInput} ${style[this.props.name]}`}
 				type={this.props.type}
 				name={this.props.name}
 				step={this.props.step}

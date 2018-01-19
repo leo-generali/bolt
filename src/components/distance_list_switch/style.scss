@@ -1,7 +1,18 @@
 .button {
   display: inline-block;
+  height: 100%;
+}
+
+.text {
+  display: none;
 }
 
 .arrow {
   display: inline;
+}
+
+@media only screen and (min-width: 600px)  {
+  .text {
+    display: inline;
+  }
 }
