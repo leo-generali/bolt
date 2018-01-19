@@ -105,7 +105,7 @@ export default class Calculator extends Component {
 
 	render() {
 		return (
-			<main>
+			<main className={`${style.calculator} has-shadow`}>
 				<div className={style.row}>
 					<div className={style.inputContainer}>
 						<div className={style.inputLabel}>D</div>
