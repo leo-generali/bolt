@@ -2,11 +2,11 @@ import { h, Component } from 'preact';
 import style from './style.scss';
 
 // Components
-import Input from "../../components/input";
-import CalcBtn from "../../components/calculate_button";
-import DistanceCheckbox from "../../components/distance_type";
-import DistanceList from "../../components/distances";
-import DistanceListCheckbox from "../../components/distance_list_switch";
+import Input from "../../components/Input";
+import CalcBtn from "../../components/CalculateButton";
+import DistanceCheckbox from "../../components/DistanceCheckbox";
+import DistanceList from "../../components/DistanceList";
+import DistanceListCheckbox from "../../components/DistanceListCheckbox";
 
 // Helpers
 import { calculatePaceString, paceStringToSeconds, calculateTotalSeconds } from "../../helpers/math";
@@ -107,16 +107,7 @@ export default class Calculator extends Component {
 		return (
 			<main className={`${style.calculator} has-shadow`}>
 				<div className={style.row}>
-					<div className={style.inputContainer}>
-						<div className={style.inputLabel}>D</div>
-						<Input
-							type="number"
-							name="distance"
-							step="0.01"
-							value={this.state.distance}
-							handleChange={this.handleChange}
-						/>
-					</div>
+					<h1 className="h1">Running Calculator</h1>
 					<div className={style.distanceListContainer}>
 						<DistanceListCheckbox
 							showingDistanceList={this.state.showingDistanceList}
@@ -127,6 +118,18 @@ export default class Calculator extends Component {
 							showingDistanceList={this.state.showingDistanceList}
 						/>
 					</div>
+				</div>
+				<div className={style.row}>
+					<div className={style.inputContainer}>
+						<div className={style.inputLabel}>D</div>
+						<Input
+							type="number"
+							name="distance"
+							step="0.01"
+							value={this.state.distance}
+							handleChange={this.handleChange}
+						/>
+					</div>
 					<CalcBtn
 						label="Calculate Distance"
 						calculateFunction={this.calculateDistance}
@@ -134,7 +137,7 @@ export default class Calculator extends Component {
 				</div>
 				<div className={style.row}>
 					<div className={style.inputContainer}>
-						<div className={style.inputLabel}>S</div>
+						<div className={style.inputLabel}>T</div>
 						<Input
 							type="number"
 							name="hours"

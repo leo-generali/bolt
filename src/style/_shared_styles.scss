@@ -23,12 +23,34 @@ $shadow-color: #091922;
 
   &--calc {
     margin-left: auto;
-    width: 100%;
+    margin-top: 1rem;
     max-width: 10rem;
+    width: 100%;
   }
 
   &:hover {
     box-shadow: 0 0 $shadow-color;
     transform: translateY(2px);
+  }
+}
+
+.h1 {
+  font-size: 3.6rem;
+}
+
+@media only screen and (min-width: 490px)  {
+  .button {
+    &--calc {
+      margin-top: 0;
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px)  {
+  .button {
+    &--calc {
+      margin-left: auto;
+    }
   }
 }

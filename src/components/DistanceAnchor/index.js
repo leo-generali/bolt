@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import style from './style.scss';
 
-class DistanceOption extends Component {
+class DistanceAnchor extends Component {
   render() {
     const name = this.props.name;
     const value = this.props.value;
@@ -20,4 +20,4 @@ class DistanceOption extends Component {
   }
 }
 
-export default DistanceOption;
+export default DistanceAnchor;
